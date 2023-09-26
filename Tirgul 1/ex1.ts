@@ -51,3 +51,19 @@ export async function fetchUserData(userId: number) {
     throw new Error(`Error fetching user data ${userId}`);
   }
 }
+
+export function getNextNumberInFib(array: Array<number>): number | undefined {
+  try {
+    for (let i = 2; i < array.length; i++) {
+      if (array[i] !== array[i - 1] + array[i - 2]) {
+        throw new Error("The array is not a Fibonacci sequence.");
+      }
+    }
+    const num1 = array[array.length - 1];
+    const num2 = array[array.length - 2];
+    const nextNumber = num1 + num2;
+    return nextNumber;
+  } catch (error) {
+    console.log(error);
+  }
+}

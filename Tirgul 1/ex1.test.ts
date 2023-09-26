@@ -4,6 +4,7 @@ import { isPalindrome } from "./ex1";
 import { sqrt } from "./ex1";
 import { sumArray } from "./ex1";
 import { fetchUserData } from "./ex1";
+import { getNextNumberInFib } from "./ex1";
 
 interface userData {
   id: number;
@@ -115,5 +116,15 @@ describe("ex1", () => {
 
     //Assert
     expect(result).toMatchObject(userData);
+  });
+  test("getNextNumberInFib", () => {
+    //Arrange
+    const fibArray = [1, 1, 2, 3, 5, 8];
+
+    //Act
+    const result = getNextNumberInFib(fibArray);
+
+    //Assert
+    expect(result).toBe(13);
   });
 });
